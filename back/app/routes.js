@@ -1,4 +1,5 @@
+var RootRouter = require('express').Router();
 
-module.exports = {
 
-};
+
+module.exports = RootRouter;
