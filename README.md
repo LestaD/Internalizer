@@ -66,7 +66,7 @@ To install driver:
 
 ```bash
 # Install npm package
-npm i --save intenalizer-driver-chrome-extension
+npm i --save internalizer-driver-chrome-extension
 ```
 
 Add plugin to `config.js`:
