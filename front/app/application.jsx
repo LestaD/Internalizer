@@ -1,8 +1,8 @@
 
 import 'babel-core/polyfill';
+import 'index.html';
+import 'stylus/internalizer.styl';
 import 'normalize.css/normalize.css';
-import './stylus/internalizer.styl';
-import './index.html';
 
 import React from 'react';
 import Router from 'react-router';

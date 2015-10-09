@@ -58,13 +58,13 @@ var jsonLoader = ['json-loader'];
 if (DEBUG) {
   jsxLoader.push('react-hot');
   cssLoader.push('style-loader', 'css-loader?sourceMap', 'postcss-loader');
-  stylLoader.push('style-loader', 'css-loader?sourceMap', 'postcss-loader', 'stylus-loader?');
+  stylLoader.push('style-loader', 'css-loader?sourceMap', 'postcss-loader', 'stylus-loader');
   cssLoader = cssLoader.join('!');
   stylLoader = stylLoader.join('!');
 }
 else {
   stylLoader = ExtractTextPlugin.extract('style-loader',
-                ['css-loader', 'postcss-loader', 'stylus-loader?'].join('!'));
+                ['css-loader', 'postcss-loader', 'stylus-loader'].join('!'));
   cssLoader = ExtractTextPlugin.extract('style-loader',
                 ['css-loader', 'postcss-loader'].join('!'));
 }
@@ -102,6 +102,7 @@ switch(process.env.NODE_ENV.toLowerCase()) {
     break;
 };
 
+console.log(path.join(__dirname, 'app/stylus'));
 
 
 /**
