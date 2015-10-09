@@ -1,7 +1,7 @@
 
 import 'babel-core/polyfill';
 import 'normalize.css/normalize.css';
-import './stylus/app.styl';
+import './stylus/internalizer.styl';
 import './index.html';
 
 import React from 'react';
@@ -12,7 +12,7 @@ import __polyfill from 'utils/polyfill';
 
 import routes from 'routes';
 
-const appElement = document.getElementById('website');
+const appElement = document.getElementById('internalizer');
 
 Router.run(routes, Router.HistoryLocation, function(Handler) {
   React.render(<Handler />, appElement);

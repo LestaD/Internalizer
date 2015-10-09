@@ -7,9 +7,7 @@ import Tree from 'db/tree';
 class ApplicationBase extends Component {
   render() {
     return (
-      <div>
-        <RouteHandler />
-      </div>
+      <RouteHandler />
     );
   }
 }
