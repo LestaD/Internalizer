@@ -1,4 +1,7 @@
 {
+  "project": {
+    "title": "Example"
+  },
   "api": {
     "port": 5003
   }
