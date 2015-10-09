@@ -1,4 +1,5 @@
 var pkg = require('./package.json'),
+    config = require('../config.json'),
     path = require('path'),
     util = require('util'),
     webpack = require('webpack'),
@@ -9,9 +10,15 @@ var pkg = require('./package.json'),
 var DEBUG = process.env.NODE_ENV === 'development';
 var PRODUCTION = process.env.NODE_ENV === 'production';
 var RUN_DEV_SERVER = !(process.env.NO_DEV_SERVER === 'true');
+var DEV_PORT = 5000;
+
 if (!process.env.NODE_ENV) {
   process.env.NODE_ENV = 'development';
   DEBUG = true;
+}
+
+if (process.env.DEV_PORT) {
+  DEV_PORT = process.env.DEV_PORT;
 }
 
 /**
@@ -20,7 +27,7 @@ if (!process.env.NODE_ENV) {
 var entryPoint = [];
 
 if (DEBUG) {
-  entryPoint.push('webpack-dev-server/client?http://localhost:4000');
+  entryPoint.push('webpack-dev-server/client?http://localhost:' + DEV_PORT);
   entryPoint.push('webpack/hot/only-dev-server');
 }
 
@@ -73,7 +80,8 @@ var Plugins = [
 ];
 
 Plugins.push(new webpack.DefinePlugin({
-  VERSION: JSON.stringify(pkg.version)
+  VERSION: JSON.stringify(pkg.version),
+  CONFIG: config
 }));
 
 switch(process.env.NODE_ENV.toLowerCase()) {
@@ -101,12 +109,12 @@ switch(process.env.NODE_ENV.toLowerCase()) {
  */
 
 module.exports = {
-  context: path.resolve(__dirname + '/app'),
+  context: path.join(__dirname + '/app'),
   entry: {
-    app: entryPoint
+    internalizer: entryPoint
   },
   output: {
-    path: path.resolve(__dirname + '/build'),
+    path: path.join(__dirname + '/build'),
     filename: 'js/[name]-' + pkg.version + '.js',
     publicPath: '/',
     pathinfo: false
@@ -118,7 +126,7 @@ module.exports = {
     loaders: [
       { test: /\.jsx?$/,    loaders: jsxLoader, exclude: /node_modules/ },
       { test: /\.css$/,     loader: cssLoader },
-      { test: /\.styl$/,    loader: stylLoader + '?paths=' + path.resolve(__dirname, 'app/stylus') },
+      { test: /\.styl$/,    loader: stylLoader + '?paths=' + path.join(__dirname, 'app/stylus') },
       { test: /\.html?$/,   loader: htmlLoader.join('!') },
       { test: /\.json?$/,   loader: jsonLoader.join('!') },
     ]
@@ -129,7 +137,7 @@ module.exports = {
   },
   plugins: Plugins,
   devServer: {
-    contentBase: path.resolve(__dirname + './build'),
+    contentBase: path.join(__dirname, 'build'),
     hot: true,
     noInfo: true,
     inline: true,

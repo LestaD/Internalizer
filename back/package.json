@@ -1,0 +1,15 @@
+{
+  "name": "internalizer-api",
+  "version": "0.0.1",
+  "description": "Backend for Internalizer",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "LestaD <i.am@lestad.net> (Sergey Sova)",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "express": "^4.13.3"
+  }
+}

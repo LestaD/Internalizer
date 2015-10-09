@@ -1,23 +1,23 @@
 {
-  "name": "internalizator",
+  "name": "internalizer-app",
   "version": "0.0.1",
-  "description": "Internalizator for your project",
-  "codename": "internalizator",
-  "repository": "https://github.com/LestaD/internalizator.git",
+  "description": "Internaliser for your project",
+  "codename": "internalizer",
+  "repository": "https://github.com/LestaD/Internalizer.git",
   "main": "index.js",
   "scripts": {
     "clean": "rimraf ./build && mkdir ./build",
     "prestart": "npm install",
-    "start": "$(npm bin)/webpack-dev-server --config webpack.config.js --port=5000",
+    "start": "$(npm bin)/webpack-dev-server --config ./webpack.config.js --port=5000",
     "build": "NODE_ENV=production $(npm bin)/webpack --colors --progress --config ./webpack.config.js"
   },
   "keywords": [
     "i18n",
-    "internalization",
+    "internalisation",
     "translate",
     "t10n"
   ],
-  "author": "LestaD <i.am@lestad.net> (Sergey Sova)",
+  "author": "Sergey Sova (LestaD) <i.am@lestad.net>",
   "license": "GPL-3.0",
   "devDependencies": {
     "autoprefixer": "6.*",
