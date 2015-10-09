@@ -6,7 +6,25 @@ body
   margin: 0
   color: black
   font-family: Roboto
+  background: white
 
 body
-  background: white
+  position: absolute 0 0 0 0
   display: flex
+
+#internalizer
+  display: flex
+  flex: 1
+
+
+body
+html
+#internalizer
+  overflow: hidden
+
+
+::selection
+  background: colorPrimaryBright
+
+::moz-selection
+  background: colorPrimaryBright

@@ -2,3 +2,45 @@
 
 :local(.NavigationTop)
   display: flex
+  height: 60px
+  background: colorPrimary
+  align-items: center
+  flex-direction: column
+
+  .InnerContainer
+    height: 100%
+    flex-direction: row
+
+  .Link
+    display: flex
+    color: white
+    height: 100%
+    align-items: center
+    padding: 0 15px
+    cursor: pointer
+    font-weight: normal
+    text-decoration: none
+    text-transform: uppercase
+    letter-spacing: 1.40px
+    box-shadow: -1px 0 0 0 rgba(255,255,255, .22)
+    transition: background .26s, color .26s
+    margin-left: 1px
+
+    &:hover
+      background: rgba(255,255,255, .22)
+
+    &:last-child
+    &.Logo
+      box-shadow: -1px 0 0 0 rgba(255,255,255, .22), 1px 0 0 0 rgba(255,255,255, .22)
+
+    &:active
+    &:focus
+      outline: none
+      color: colorPrimaryBright
+
+  .Menu
+    display: flex
+    flex: 1
+    // align-items: flex-end
+    justify-content: flex-end
+    height: 100%

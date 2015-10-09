@@ -5,7 +5,9 @@ var pkg = require('./package.json'),
     webpack = require('webpack'),
     ExtractTextPlugin = require('extract-text-webpack-plugin')
     autoprefixer = require('autoprefixer'),
-    csswring = require('csswring');
+    csswring = require('csswring'),
+    postcssCenter = require('postcss-center'),
+    postcssShort = require('postcss-short');
 
 var DEBUG = process.env.NODE_ENV === 'development';
 var PRODUCTION = process.env.NODE_ENV === 'production';
@@ -84,7 +86,7 @@ Plugins.push(new webpack.DefinePlugin({
   CONFIG: config
 }));
 
-switch(process.env.NODE_ENV.toLowerCase()) {
+switch (process.env.NODE_ENV.toLowerCase()) {
   case 'development':
     Plugins.push(new webpack.HotModuleReplacementPlugin());
     break;
@@ -101,8 +103,6 @@ switch(process.env.NODE_ENV.toLowerCase()) {
     Plugins.push(new webpack.NoErrorsPlugin());
     break;
 };
-
-console.log(path.join(__dirname, 'app/stylus'));
 
 
 /**
@@ -148,6 +148,6 @@ module.exports = {
     historyApiFallback: true
   },
   postcss: function () {
-    return [autoprefixer, csswring]
+    return [autoprefixer, csswring, postcssCenter, postcssShort]
   }
 };

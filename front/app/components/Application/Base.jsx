@@ -11,9 +11,9 @@ import NavigationTop from 'Navigation/Top/NavigationTop';
 class ApplicationBase extends Component {
   render() {
     return (
-      <div>
+      <div className={css.Base}>
         <NavigationTop />
-        <div className={css.Base}>
+        <div className={css.Content}>
           <RouteHandler />
         </div>
       </div>
