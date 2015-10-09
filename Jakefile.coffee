@@ -24,7 +24,7 @@ namespace 'api', ->
 
 
 namespace 'app', ->
-  desc ''
+  desc 'Run webpack development server'
   task 'dev', ->
     jake.exec 'pushd front && npm start && popd', printStderr: true, printStdout: true
 
