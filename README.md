@@ -60,4 +60,36 @@ internalizer driver uninstall yaml-simple
 ```
 
 
+## Drivers
+
+To install driver:
+
+```bash
+# Install npm package
+npm i --save intenalizer-driver-chrome-extension
+```
+
+Add plugin to `config.js`:
+
+```js
+{
+  // ...
+  "drivers": [
+    "chrome-extension"
+  ],
+  "driverDefault": "chrome-extension"
+}
+```
+
+With internalizer script it was easier:
+
+```bash
+internalizer driver install --default chrome-extension
+```
+
+
+
+
+
+
 
