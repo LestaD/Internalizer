@@ -5,7 +5,7 @@ Simple web-app to make translations for your own project
 
 ## Install
 
-With internalizer script:
+With internalizer script _(not released)_:
 
 ```bash
 npm i -g internalizer
@@ -13,7 +13,7 @@ cd to/your/projects
 internalizer install
 ```
 
-With git:
+With git _(recommended)_:
 
 ```bash
 cd to/your/projects
