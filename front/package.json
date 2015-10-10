@@ -38,6 +38,7 @@
     "postcss-center": "^1.0.0",
     "postcss-loader": "^0.6.0",
     "poststylus": "^0.2.0",
+    "qwest": "^2.1.0",
     "react": "^0.13.3",
     "react-document-title": "^1.0.3",
     "react-hot-loader": "^1.2.8",

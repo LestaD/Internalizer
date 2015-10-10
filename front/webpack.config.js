@@ -83,7 +83,8 @@ var Plugins = [
 
 Plugins.push(new webpack.DefinePlugin({
   VERSION: JSON.stringify(pkg.version),
-  CONFIG: config
+  API_ADDRESS: JSON.stringify((config.api.ssl ? 'https' : 'http') + '://' + config.api.host +
+        (((config.api.port == 80 && !config.api.ssl) || (config.api.port == 443 && config.api.ssl)) ? '' : ':' + config.api.port))
 }));
 
 switch (process.env.NODE_ENV.toLowerCase()) {
